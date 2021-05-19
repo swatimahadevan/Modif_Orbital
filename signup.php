@@ -135,7 +135,7 @@ $con = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cl
 		       			echo "there must be an empty data field!";
 		       		}
 		       	}
-			?>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>
