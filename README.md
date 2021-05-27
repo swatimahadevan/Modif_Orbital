@@ -7,12 +7,14 @@ User Stories:
 2.	As a student who is looking to take up modules that will help my academic standing, I want to be able search up my module quickly and find reviews and ratings on the module.
 3.	As a student who has taken up enriching modules and wish to share with my juniors, I want to able to leave a review and rating on the modules for the student community.
 4.	As a student who has general questions on module registration and wish to ask the rest of the student community for opinions, I want to able to chat with other users on the website.
+
 Proposed Functionalities:
 1.	Register and Sign In.
 2.	Browse modules offered by NUS.
 3.	Submit module review and rating (out of 5)
 4.	View reviews and ratings submitted by other users.
 5.	Discuss chat for community questions.
+
 Tech Stack:
 1.	Frontend: HTML, CSS, JavaScript, PHP
 2.	Backend: SQL Database
