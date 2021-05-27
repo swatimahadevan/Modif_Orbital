@@ -2,6 +2,7 @@
 Proposed Level of Achievement: Vostok
 Target audience: Students of NUS
 Motivation: When you are curious to know how difficult a module is, you often find yourself spending a lot of time scouring many online forums trying to find others’ opinions on it. Imagine how convenient it will be to have one website where you can view modules, submit reviews and rating (out of 5), and even view the reviews and ratings left by other students.
+
 User Stories:
 1.	As a student who has to participate in an upcoming module registration exercise and is unsure of what modules to take up, I want to be able browse through the modules NUS has to offer.
 2.	As a student who is looking to take up modules that will help my academic standing, I want to be able search up my module quickly and find reviews and ratings on the module.
