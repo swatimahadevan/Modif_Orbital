@@ -17,7 +17,7 @@ else
 <html>
 <head>
     <!-- 
-    bootstrapped stylesheets from http://www.templatemo.com/preview/templatemo_418_form_pack 
+    bootstrapped stylesheet from http://www.templatemo.com/preview/templatemo_418_form_pack 
     -->
 	<title>Sign In Form</title>
 	<meta name="keywords" content="" />
