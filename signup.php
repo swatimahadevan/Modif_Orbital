@@ -1,17 +1,24 @@
 <?php
-//Get Heroku ClearDB connection information
-$cleardb_url      = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$cleardb_server   = $cleardb_url["host"];
-$cleardb_username = $cleardb_url["user"];
-$cleardb_password = $cleardb_url["pass"];
-$cleardb_db       = substr($cleardb_url["path"],1);
-$con = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+error_reporting(1);
+$server="remotemysql.com";
+$user="pBc1y4gdCU";
+$dbname="pBc1y4gdCU";
+$password="enO5z5EJpi";
+$con=mysqli_connect($server,$user,$password,$dbname);
+if($con)
+{
+	  // echo"connected";
+}
+else
+{
+	die(mysqli_connect_error());
+}                                                                          
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <!-- 
-    http://www.templatemo.com/preview/templatemo_418_form_pack 
+    bootstrapped stylesheets from http://www.templatemo.com/preview/templatemo_418_form_pack 
     -->
 	<title>Sign In</title>
 	<meta name="keywords" content="" />
@@ -132,10 +139,10 @@ $con = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cl
 		       		}
 		       		else
 		       		{
-		       			echo "there must be an empty data field!";
+		       			echo "Empty Field!";
 		       		}
 		       	}
-	?>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			?>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>

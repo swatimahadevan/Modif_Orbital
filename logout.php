@@ -15,7 +15,6 @@ else
 	die(mysqli_connect_error());
 }     
 session_start();
-//SET FLAG AS FALSE AND RETURN TO HOME PAGE
  $_SESSION['loggedin'] = False;
  header('location:index.php?uid=');
 ?>

@@ -22,7 +22,6 @@ session_start();
                  header('Location: signin.php');
             }   
 ?>
-//HTML CODE
 <!DOCTYPE html>
 <head>
 <title>Modif</title>
@@ -68,7 +67,6 @@ session_start();
     <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-  //CSS FUNCTIONS
 	<style>
 	* {
   box-sizing: border-box;
@@ -158,10 +156,12 @@ margin:0.2em auto;
 	 height: 30rem;
 	padding: 1rem;
  }
+ 
+
+
 </style>
 </head>
 <body>
-//SEARCH BOX AND MODULE LIST UI
 <div class="container-fluid body">
  <div class="sbox" style= "color: #FFFFFF;">
 			 <div>
@@ -169,19 +169,29 @@ margin:0.2em auto;
 			          <form class="col-6 fm2" method="POST" action="search.php<?php echo'?uid='.$uid ?>">
              <input style= "color: #FFFFFF;" type="text" class="searchBox" placeholder="Look for a module by code..." name="searchname">
 			</div>
+
 </div>
           <div class="row center">
               <h3  style="color:white;">MODULE LIST</h3>
            </div>
 	       <div class="row center">
-         //PHP FOR MODULE DISPLAY FROM JSON SQLDB
                 <?php
                     while($result=mysqli_fetch_assoc($data))
                     {  
                         $k=$result['title'];
-                        echo"<div><a href='module_review_page.php?mid=$result[id]&uid=$_GET[uid]'><p class='row center' align=justify style='background-color:#343a40; border-radius:4px; font-size:30px; color: #FF3F4A; width: 1200px; margin:5px; margin-bottom: 25px; padding: 10px 14px 10px 44px; position: relative; box-shadow: 0px 1px 5px #999;'>$k</p ></a>"; 
+                     echo"<div><a href='module_review_page.php?mid=$result[id]&uid=$_GET[uid]'><p class='row center' align=justify style='background-color:#343a40;
+border-radius:4px;
+font-size:30px;
+color: #FF3F4A;
+width: 1200px;
+margin:5px;
+margin-bottom: 25px;
+padding: 10px 14px 10px 44px;
+position: relative;
+box-shadow: 0px 1px 5px #999;'>$k</p ></a>";
+                      
                     }
                 ?>   			
 </div>
-</body>
+    </body>
 </html>
