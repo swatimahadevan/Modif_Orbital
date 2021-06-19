@@ -21,5 +21,5 @@ Milestone 3: Point System, Bug-Fixing
 
 Tech Stack:
 
-Frontend: HTML, CSS, JavaScript, PHP
-Backend: SQL Database
+Frontend: HTML, CSS, JavaScript
+Backend: SQL Database, PHP
