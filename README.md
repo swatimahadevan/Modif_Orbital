@@ -10,11 +10,15 @@ As a student who has to participate in an upcoming module registration exercise 
 As a student who is looking to take up modules that will help my academic standing, I want to be able search up my module quickly and find reviews and ratings on the module.
 As a student who has taken up enriching modules and wish to share with my juniors, I want to able to leave a review and rating on the modules for the student community.
 As a student who has general questions on module registration and wish to ask the rest of the student community for opinions, I want to able to discuss with other users on the website.
+
 Plan:
 
 Milestone 1: Sign In, Register, Browse Modules, Search Modules, Contact Us, Rate and Review Modules (rudimentary setup).
+
 Milestone 2: Rate and Review Modules Page (with fixed UI), Forum Page, Profile Page
+
 Milestone 3: Point System, Bug-Fixing
+
 Tech Stack:
 
 Frontend: HTML, CSS, JavaScript, PHP
