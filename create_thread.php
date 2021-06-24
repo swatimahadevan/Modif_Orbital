@@ -1,41 +1,7 @@
-<!--
-=========================================================
-* Material Dashboard Dark Edition - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-dark
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
-
-* Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <?php
-require('../vendor/autoload.php');
-error_reporting(1);
-$server="remotemysql.com";
-$user="pBc1y4gdCU";
-$dbname="pBc1y4gdCU";
-$password="enO5z5EJpi";
-$con=mysqli_connect($server,$user,$password,$dbname);
-if($con)
-{
-	  // echo"connected";
-}
-else
-{
-	die(mysqli_connect_error());
-}      
-$uid=$_GET['uid'];
-$query="SELECT * FROM modules";
-$data=mysqli_query($con,$query);
 session_start();
-    if ($_SESSION['loggedin'] == false)
-        {
-                 header('Location: signin.php');
-           }   
+include 'connect.php';
+$uid=$_GET['uid'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +11,6 @@ session_start();
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Modif
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -55,82 +20,7 @@ session_start();
   <link href="./assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="./assets/demo/demo.css" rel="stylesheet" />
-     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
 
-/* Button used to open the chat form - fixed at the bottom of the page */
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
-}
-
-/* The popup chat - hidden by default */
-.chat-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  z-index: 9;
-}
-
-/* Add styles to the form container */
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
-}
-
-/* Full-width textarea */
-.form-container textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0 10px 0;
-  border: none;
-  background: #f1f1f1;
-  resize: none;
-  min-height: 150px;
-}
-
-/* When the textarea gets focus, do something */
-.form-container textarea:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for the submit/send button */
-.form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
-
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
-}
-
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
-</style>
 </head>
 
 <body class="dark-edition" data-color="purple>
@@ -146,7 +36,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active">
+          <li class="nav-item">
               		  <?php
                       echo"<a class='nav-link' href='index.php?uid=$_GET[uid]'> <i class='material-icons'>bubble_chart</i><p>About Us</p></a>";
                 ?> 
@@ -160,10 +50,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
               		  <?php
                       echo"<a class='nav-link' href='profile.php?uid=$_GET[uid]'> <i class='material-icons'>person</i><p>User Profile</p></a>";
                 ?> 
-          </li>
-		  				</li>
-								</li>
-				          <li class="nav-item">
+				</li>
+				          <li class="nav-item active">
               		  <?php
                       echo"<a class='nav-link' href='create_thread.php?uid=$_GET[uid]'> <i class='material-icons'>comments</i><p>Forum</p></a>";
                 ?> 
@@ -176,7 +64,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:void(0)">About Us</a>
+            <a class="navbar-brand" href="javascript:void(0)">Forum Feed</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
             <span class="sr-only">Toggle navigation</span>
@@ -194,113 +82,58 @@ body {font-family: Arial, Helvetica, sans-serif;}
         </div>
       </nav>
       <!-- End Navbar -->
-	        <!-- BEGIN RIGHT SIDE CONTENT -->
-<div class="content">
+      <div class="content">
         <div class="container-fluid">
+		<div class="col-md-12">
           <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h3 style="text-align: center;">ABOUT US</h4>
-                 
-                </div>
-                <div class="card-body">
-                <h4  style="text-align: center;">This website is built for the purpose of viewing and sharing module ratings and reviews.</h4>
-				
-				 <div class="container-fluid">
-          <div class="row">
-                     <div class="col-md-4">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h3  style="text-align: center;">Browse the list of modules</h4>
-                 
-                </div>
-                
-              </div>
-            </div>
-			                     <div class="col-md-4">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h3  style="text-align: center;">View and share reviews and ratings</h4>
-                 
-                </div>
+					 <form method="POST" id="demo">
+                <div class="col-feedback comments">
+                 <br>
+                  <input type="text" name="title" id="title" placeholder="Choose an appropriate thread title..." style="width:250%;color:black;">
+				  <input type="text" name="desc" id="desc" placeholder="Thread details..." style="width:250%;color:black;"><br />
+                  <input class="btn btn-primary btn-block" type="submit" name="submit" value="create new thread" style="color: white;">
+                  <?php
+  if($_POST['submit'])
+                     {    
+                          $title=$_POST['title'];
+                          $desc=$_POST['desc'];             
+						  $t = date('Y-m-d H:i:s');
+                                $query="INSERT INTO thread(thread_subject, thread_detail, thread_date) VALUES('$title','$desc','$t')";
+                                $data=mysqli_query($con,$query);
+                                if($data)
+                                {
+                                  // echo"data inserted successfully";
+                                }
+                                else
+                                {
+                                  // echo"not inserted";
+                                }
+                     }
+                 ?>
 
-              </div>
-            </div>
-			                     <div class="col-md-4">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h3  style="text-align: center;">Participate in forum discussions</h4>
-                 
-                </div>
-                
-              </div>
-            </div>
-			</div>
-			<div>
-			
-			
-                </div>
-              </div>
-            </div>
-           
+            </form>
+
           </div>
+          
+</div>
+</div>
         </div>
+			<?php
+		$query2="SELECT * FROM thread";
+		$data2=mysqli_query($con,$query2);
+		while($result=mysqli_fetch_assoc($data2))
+					{
+						$p=$result['thread_subject'];
+						$q=$result['thread_detail'];
+						$r=$result['thread_date'];
+						echo"<div class='col-xl-14 col-lg-12'><div class='card card-chart'>
+                <div class='card-header card-header-primary'>
+                <div class='card-body'><a href='thread.php?thread_id=$result[thread_id]&uid=$_GET[uid]'><h3>".$p."</h3></a>".$q."</td><td>&nbsp;&nbsp;&nbsp;".$r."</div></div></div></div>"; 			
+					} 
+				   
+?>
       </div>
-	        <!-- END OF RIGHT SIDE CONTENT -->
-			   <button class="open-button" onclick="openForm()">Chat</button>
-    <div class=" wrapper111111 chat-popup" id="myForm">
-        <div class="title">Chatbot</div>
-        <div class="form">
-            <div class="bot-inbox inbox">
-                <div class="icon">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="msg-header">
-                    <p>Hello there, how can I help you?</p>
-                </div>
-            </div>
-        </div>
-        <div class="typing-field">
-            <div class="input-data">
-                <input id="data" type="text" placeholder="Type something here.." required>
-            </div>
-        </div>
-		<button type="button" class="btn cancel" onclick="closeForm()">Close</button> <button type="button" class="btn cancel" id="send-btn">Send</button>
-    </div>
-<script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
-    <script>
-        $(document).ready(function(){
-            $("#send-btn").on("click", function(){
-                $value = $("#data").val();
-                $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ $value +'</p></div></div>';
-                $(".form").append($msg);
-                $("#data").val('');
-                
-                // start ajax code
-                $.ajax({
-                    url: 'message.php',
-                    type: 'POST',
-                    data: 'text='+$value,
-                    success: function(result){
-                        $replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+ result +'</p></div></div>';
-                        $(".form").append($replay);
-                        // when chat goes down the scroll bar automatically comes to the bottom
-                        $(".form").scrollTop($(".form")[0].scrollHeight);
-                    }
-                });
-            });
-        });
-    </script>
-      </div>
+	  </div>
       <script>
         const x = new Date().getFullYear();
         let date = document.getElementById('date');

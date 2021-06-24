@@ -42,7 +42,7 @@ session_start();
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard Dark Edition by Creative Tim
+    Modif
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -126,7 +126,7 @@ session_start();
                 </div>
                 <div class="card-body">
                   <h6 class="card-category">Student</h6>
-                  <h4 class="card-title">Name</h4>
+                  <h4 class="card-title">Level: </h4>
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@ session_start();
 						 <?php
 						$query2="SELECT * FROM users where id='$uid'";$data2=mysqli_query($con,$query2);$result2=mysqli_fetch_assoc($data2);
 						$r=$result2['username'];
-						echo"<label><h3>Username: ".$r."</h3></label>"; 			
+						echo"<label><h4>Username: ".$r."</h4></label>"; 			
 				   ?>
                         </div>
                       </div>
@@ -153,7 +153,17 @@ session_start();
 						$query2="SELECT * FROM users where id='$uid'";$data2=mysqli_query($con,$query2);$result2=mysqli_fetch_assoc($data2);
 						$r=$result2['first_name'];
 						$q=$result2['last_name'];
-						echo"<label><h3>Full Name: ".$r." ".$q."</h3></label>"; 			
+						echo"<label><h4>Name: ".$r."</h4></label>"; 	
+				   ?>
+                        </div>
+						
+                      </div>
+					  <div class="col-md-6">
+                        <div class="form-group">
+						 <?php
+$query2="SELECT * FROM users where id='$uid'";$data2=mysqli_query($con,$query2);$result2=mysqli_fetch_assoc($data2);
+						$q=$result2['last_name'];	
+						echo"<label><h4>Email: ".$q."</h4></label>"; 		
 				   ?>
                         </div>
                       </div>
