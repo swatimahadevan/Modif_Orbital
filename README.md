@@ -1,8 +1,8 @@
 Target audience: Students of NUS
 
-Motivation: When you are curious to know how difficult a module is, you often find yourself spending a lot of time scouring many online forums trying to find others’ opinions on it. Imagine how convenient it will be to have one website where you can view modules, submit reviews and rating (out of 5), and even view the reviews and ratings left by other students.
+Motivation: When you are curious to know how difficult a module is, you often find yourself spending a lot of time scouring many online forums trying to find others’ opinions on it. Imagine how convenient it will be to have one website where you can view modules, submit reviews and rating (out of 5),  view the reviews and ratings left by other students and even ask and answer questions on a student forum.
 
-What makes us different?: We provide more succint reviews as well as a forum to make your own threads or leave posts on threads left by others.
+What makes us different?: We provide more succinct reviews and a modules list page that is quick and easy to browse. We also provide a forum to begin your own threads or leave posts on threads left by other students. Our Chatbot also enhances the user interaction.
 
 User Stories:
 
@@ -18,9 +18,9 @@ Plan:
 
 Milestone 1: Sign In, Register, Browse Modules, Search Modules, Contact Us, Rate and Review Modules (rudimentary setup).
 
-Milestone 2: Rate and Review Modules Page (with fixed UI), Forum Page, Profile Page
+Milestone 2: Rate and Review Modules Page (with fixed UI),  Forum, Profile Page, Chatbot setup.
 
-Milestone 3: Point System, Bug-Fixing
+Milestone 3: Gamification (Purpose: Will act as an incentive to encourage users to explore and participate in the features offered, making it a better experience for the rest of the users as well), System testing and Bug-fixing (Purpose: Ensure quality experience).
 
 Tech Stack:
 
