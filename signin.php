@@ -106,12 +106,14 @@ else
                     }
                     else
                     {	
-                    	echo"Username does not exist!";
+                    	$message1 = "Username does not exist!";
+						echo "<script type='text/javascript'>alert('$message1');</script>";
                     }	                  
 	       		}
 	       		else
 	       		{
-	       			echo "Empty field!";
+	       			$message = "There are empty fields!";
+					echo "<script type='text/javascript'>alert('$message');</script>";
 	       		}
 	       }
 		?>

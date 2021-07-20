@@ -42,6 +42,7 @@ else
 		background: #800080;
 		color: white;
 	}
+	.error {color: #FF0000;}
 	</style>
 </head>
 <!-- FORM UI -->
@@ -110,18 +111,25 @@ else
 					$first_name=$_POST['first_name'];
 					$last_name=$_POST['last_name'];
 		           	$name=$_POST['name'];				           	
-		       		$pass=$_POST['pass'];				       		
-		       		if($name!=""&&$pass!="")
-		       		{	
-		       			$pass=md5($pass);
+		       		$pass=$_POST['pass'];		
+		       		if($name!=""&&$pass!=""&&$last_name!=""&&$first_name!="")
+		       		{   
+						$pass=md5($pass);
 		       			$sql = "SELECT * FROM users WHERE username='$name'";
                         $result = mysqli_query($con,$sql);
                         $count=mysqli_num_rows($result);
                         if($count>0)
                         {
-                        	die("Username already Exits");
+							$message1 = "Username Already Exists!";
+						   echo "<script type='text/javascript'>alert('$message1');</script>";
                         }
                         else
+						{
+														if (!filter_var($last_name, FILTER_VALIDATE_EMAIL)) {
+							echo '<script>alert("Email is not Valid! Please use the format student@gmail.com")</script>';
+							}
+							else
+							{
 			       			$query="INSERT INTO users(first_name,last_name,username,password) VALUES('$first_name','$last_name','$name','$pass')";
 			       			$data=mysqli_query($con,$query);
 			       			$sql1 = "SELECT * FROM users WHERE username='$name'";
@@ -136,10 +144,13 @@ else
 			       			{
 			       				echo"not inserted";
 			       			}
+							}
+						}
 		       		}
 		       		else
 		       		{
-		       			echo "Empty Field!";
+		       			$message = "There are empty fields!";
+						echo "<script type='text/javascript'>alert('$message');</script>";
 		       		}
 		       	}
 			?>
